@@ -29,9 +29,9 @@ public class CarBrandsServiceImplTest {
   }
 
   @Test
-  public void testFindByNameIgnoreCase() {
-    Optional<CarBrand> fiatBrand = crudService.findByNameIgnoreCase("fiat");
-    Optional<CarBrand> bmwBrand = crudService.findByNameIgnoreCase("bmw");
+  public void testFindByName() {
+    Optional<CarBrand> fiatBrand = crudService.findByName("fiat");
+    Optional<CarBrand> bmwBrand = crudService.findByName("bmw");
 
     assertNotNull(fiatBrand);
     assertThat(fiatBrand).isNotEmpty();

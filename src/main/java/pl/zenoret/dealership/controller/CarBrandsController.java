@@ -23,6 +23,6 @@ public class CarBrandsController {
 
   @GetMapping("/find/{carBrand}")
   public ResponseEntity<Optional<CarBrand>> findByName(@PathVariable String carBrand) {
-    return ResponseEntity.ok(crudService.findByNameIgnoreCase(carBrand));
+    return ResponseEntity.ok(crudService.findByName(carBrand));
   }
 }

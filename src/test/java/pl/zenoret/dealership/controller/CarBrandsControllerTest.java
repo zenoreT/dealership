@@ -34,11 +34,11 @@ public class CarBrandsControllerTest {
   private CarBrandsService crudService;
 
   @Test
-  public void testFindByNameIgnoreCase() throws Exception {
+  public void testFindByName() throws Exception {
     CarBrand carBrand = new CarBrand();
     carBrand.setId(1L);
     carBrand.setName("Fiat");
-    when(crudService.findByNameIgnoreCase(anyString())).thenReturn(Optional.of(carBrand));
+    when(crudService.findByName(anyString())).thenReturn(Optional.of(carBrand));
 
     MvcResult result = this.mockMvc.perform(get("/api/car-brands/find/{carBrand}", "fiat")
       .accept(MediaType.APPLICATION_JSON_VALUE))

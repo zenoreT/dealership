@@ -18,7 +18,7 @@ public class CarBrandsServiceImpl implements CarBrandsService {
   }
 
   @Override
-  public Optional<CarBrand> findByNameIgnoreCase(String name) {
-    return repository.findByNameIgnoreCase(name);
+  public Optional<CarBrand> findByName(String name) {
+    return repository.findByName(name);
   }
 }

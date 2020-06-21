@@ -5,5 +5,5 @@ import pl.zenoret.dealership.entity.CarBrand;
 
 public interface CarBrandsRepository {
 
-  Optional<CarBrand> findByNameIgnoreCase(String name);
+  Optional<CarBrand> findByName(String name);
 }

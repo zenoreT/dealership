@@ -19,7 +19,7 @@ public class CarBrandsRepositoryImpl implements CarBrandsRepository {
     this.entityManager = entityManager;
   }
 
-  public Optional<CarBrand> findByNameIgnoreCase(String name) {
+  public Optional<CarBrand> findByName(String name) {
     String sql = "SELECT carBrand FROM CarBrand carBrand WHERE UPPER(carBrand.name) = UPPER(:name)";
     return entityManager.createQuery(sql, CarBrand.class)
       .setParameter("name", name)
