@@ -1,6 +1,7 @@
 package pl.zenoret.dealership.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
@@ -76,7 +77,7 @@ public class PartServiceActionsControllerTest {
     serviceAction.setCreatedAt(Instant.now());
     serviceAction.setUpdatedAt(Instant.now());
 
-    when(crudService.save(serviceAction)).thenReturn(serviceAction);
+    when(crudService.save(any())).thenReturn(serviceAction);
 
     MvcResult result =
       this.mockMvc.perform(post("/api/part-service-actions/new")
